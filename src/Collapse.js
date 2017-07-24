@@ -112,7 +112,7 @@ export class Collapse extends React.PureComponent {
       return;
     }
 
-    if (this.state.currentState === RESTING) {
+    if (this.state.currentState === RESTING || this.state.currentState === WAITING) {
       this.setState({currentState: IDLING, from, to});
     }
   }
@@ -161,7 +161,10 @@ export class Collapse extends React.PureComponent {
     if (this.state.currentState === WAITING && !this.state.to) {
       return {overflow: 'hidden', height: 0};
     }
-
+    if (this.state.currentState === WAITING && (this.state.from === this.state.to)) { 
+      return {overflow: 'visible'};
+    }
+    
     return {overflow: 'hidden', height: Math.max(0, height)};
   };
 
