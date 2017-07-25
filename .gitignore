@@ -13,7 +13,7 @@ pids
 # https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
 /node_modules/
 
-/lib/
+#/lib/
 /example/
 /.coveralls.yml
 /reports/
@@ -21,3 +21,4 @@ pids
 /.eslintcache
 
 .idea/
+.DS_Store
